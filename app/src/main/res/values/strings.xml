@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Checkpoint1N0x31</string>
+    <string name="send_button">Envoyer</string>
+    <string name="lastname">Nom</string>
+    <string name="firstname">Prénom</string>
+    <string name="school">Ecole</string>
+    <string name="langage">Langage</string>
+</resources>
