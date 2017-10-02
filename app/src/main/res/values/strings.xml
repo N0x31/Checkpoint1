@@ -5,4 +5,5 @@
     <string name="firstname">Prénom</string>
     <string name="school">Ecole</string>
     <string name="langage">Langage</string>
+    <string name="formEmpty">Merci de renseigner tous les champs du formulaire</string>
 </resources>

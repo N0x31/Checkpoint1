@@ -12,20 +12,17 @@ public class StudentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
 
-        String lastname = getIntent().getStringExtra("firstname");
-        String firstname = getIntent().getStringExtra("lastname");
-        String school = getIntent().getStringExtra("school");
-        String langage = getIntent().getStringExtra("langage");
+        Intent envoi = getIntent();
+        StudentModel studentModel = envoi.getParcelableExtra("student");
 
         TextView studentFirstname = (TextView)findViewById(R.id.studentFirstName);
+        studentFirstname.setText(studentModel.getFirstname());
         TextView studentLastname = (TextView)findViewById(R.id.studentLastName);
+        studentLastname.setText("Elève : " + studentModel.getLastname());
         TextView studentSchool = (TextView)findViewById(R.id.studentSchool);
+        studentSchool.setText("Ecole : " + studentModel.getSchool());
         TextView studentLangage = (TextView)findViewById(R.id.studentLangage);
-
-        studentFirstname.setText(firstname);
-        studentLastname.setText("Eleve : " + lastname);
-        studentSchool.setText("Ecole : " + school);
-        studentLangage.setText("Langage : " + langage);
+        studentLangage.setText("Langage : " + studentModel.getLangage());
 
     }
 }

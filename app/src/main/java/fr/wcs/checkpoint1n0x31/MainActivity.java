@@ -36,19 +36,17 @@ public class MainActivity extends AppCompatActivity {
                         || school.getText().toString().isEmpty()
                         || langage.getText().toString().isEmpty()) {
 
-                    Context context = getApplicationContext();
-                    int duration = Toast.LENGTH_LONG;
-                    Toast toast = Toast.makeText(context,
-                            "Merci de renseigner tous les champs du formulaire", duration);
-                    toast.show();
+                    //Récupère texte du toast dans string
+                    Toast.makeText(MainActivity.this,
+                            getResources().getString(R.string.formEmpty),
+                            Toast.LENGTH_LONG).show();
                 }
 
                 else{
+                    StudentModel currentStudent = new StudentModel(firstname.getText().toString(), lastname.getText().toString(),
+                            school.getText().toString(),langage.getText().toString());
                     Intent envoi = new Intent(MainActivity.this, StudentActivity.class);
-                    envoi.putExtra("firstname", firstname.getText().toString());
-                    envoi.putExtra("lastname", lastname.getText().toString());
-                    envoi.putExtra("school", school.getText().toString());
-                    envoi.putExtra("langage", langage.getText().toString());
+                    envoi.putExtra("student", currentStudent);
                     startActivity(envoi);
                 }
 
